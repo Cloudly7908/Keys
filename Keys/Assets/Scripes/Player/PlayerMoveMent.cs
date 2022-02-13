@@ -12,13 +12,6 @@ public class PlayerMoveMent : MonoBehaviour
 
     private Rigidbody rb;
 
-
-    private float xRotation;
-    private float sensitivity = 50f;
-    private float sensMultiplier = 1f;
-
-
-
     public float moveSpeed = 4500;
     public float maxSpeed = 20;
     public float speed = 10f;
@@ -117,6 +110,15 @@ public class PlayerMoveMent : MonoBehaviour
 
         float maxSpeed = this.maxSpeed;
 
+        if(grounded && rb.velocity.magnitude < 30f)
+        {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                print("Spriting");
+                rb.AddForce(transform.forward * maxSpeed * 25f);
+            }
+        }
+
 
 
 
@@ -144,8 +146,6 @@ public class PlayerMoveMent : MonoBehaviour
         if (grounded && readyToJump)
         {
             readyToJump = false;
-
-
 
             rb.AddForce(Vector2.up * jumpForce * 1.5f);
             rb.AddForce(transform.forward * jumpForce * jumpForceForward);
