@@ -35,6 +35,7 @@ public class PlayerMoveMent : MonoBehaviour
     private bool Onland = true;
 
     public GameObject Cam;
+    public GameObject Train;
 
 
     float x, y;
@@ -71,6 +72,7 @@ public class PlayerMoveMent : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             transform.position = respawn.position;
+            
         }
 
         if (rb.velocity.magnitude < 25f)
@@ -110,14 +112,14 @@ public class PlayerMoveMent : MonoBehaviour
 
         float maxSpeed = this.maxSpeed;
 
-        //if(grounded && rb.velocity.magnitude < 30f)
-        //{
-           // if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W)))
-            //{
-            //    print("Spriting");
-            //    rb.AddForce(transform.forward * maxSpeed * 25f);
-            //}
-       // }
+        if(grounded && rb.velocity.magnitude < 30f)
+        {
+            if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W)))
+            {
+                print("Spriting");
+                rb.AddForce(transform.forward * maxSpeed * 25f);
+            }
+        }
 
 
 
@@ -268,47 +270,29 @@ public class PlayerMoveMent : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider trigger)
+    private void OnTriggerStay(Collider trigger)
     {
-
-
-      //  if (trigger.CompareTag("mist"))
-       // {
-         //   print("respawn");
-          //  transform.position = respawn.position;
+        if (trigger.CompareTag("Free"))
+        {
+            transform.parent = null;
 
 
 
-     //   }
+        }
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerExit(Collider trigger)
     {
+        if (trigger.CompareTag("Free"))
+        {
+
+            transform.parent = Train.gameObject.transform;
+
+
+        }
 
     }
-    }
-
-    
 
 
-
-
-
-    //private IEnumerator LandDust()
-    // {
-    //dust.Play();
-    //  yield return new WaitForSeconds(delay);
-    //  dust.Stop();
-    //}
-
-
-
-
-
-
-
-
-
-
-
+}
