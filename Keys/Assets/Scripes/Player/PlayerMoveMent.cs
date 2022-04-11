@@ -110,14 +110,14 @@ public class PlayerMoveMent : MonoBehaviour
 
         float maxSpeed = this.maxSpeed;
 
-        if(grounded && rb.velocity.magnitude < 30f)
-        {
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                print("Spriting");
-                rb.AddForce(transform.forward * maxSpeed * 25f);
-            }
-        }
+        //if(grounded && rb.velocity.magnitude < 30f)
+        //{
+           // if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W)))
+            //{
+            //    print("Spriting");
+            //    rb.AddForce(transform.forward * maxSpeed * 25f);
+            //}
+       // }
 
 
 
@@ -272,14 +272,14 @@ public class PlayerMoveMent : MonoBehaviour
     {
 
 
-        if (trigger.CompareTag("mist"))
-        {
-            print("respawn");
-            transform.position = respawn.position;
+      //  if (trigger.CompareTag("mist"))
+       // {
+         //   print("respawn");
+          //  transform.position = respawn.position;
 
 
 
-        }
+     //   }
 
     }
 

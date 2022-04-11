@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 345872308798695147}
   - component: {fileID: 2344215524452021277}
   - component: {fileID: 8418682368333941350}
+  - component: {fileID: 457301126}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1dbc492f6f173e04b9d012bb613877de, type: 2}
+  - {fileID: 2100000, guid: a5a9159dcd6095346b758e12512cd1e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143,6 +144,25 @@ MonoBehaviour:
   delay: 0
   dust: {fileID: 0}
   Cam: {fileID: 7721638286282289056}
+--- !u!95 &457301126
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841281144264403101}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5cbaab55e23ee454aba11ed9f59c2c33, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7721638286282289056
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +176,7 @@ GameObject:
   - component: {fileID: 1316982794793872569}
   - component: {fileID: 1054952504127027688}
   - component: {fileID: 8418682368333941351}
+  - component: {fileID: 2112903748}
   m_Layer: 6
   m_Name: Camera
   m_TagString: Untagged
@@ -273,5 +294,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4733cfecf1e06044bb59e0f6e02a7dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 200
   playerBody: {fileID: 1511246943312009217}
+--- !u!111 &2112903748
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721638286282289056}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 0f192ce47e9b13c4bad20574aa458a88, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
