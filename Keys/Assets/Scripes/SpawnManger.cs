@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SpawnManger : MonoBehaviour
 {
-    // Start is called before the first frame update
+    TrackSpawner trackSpawner;
+
     void Start()
     {
-        
+        trackSpawner = GetComponent<TrackSpawner>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnTriggerEntered()
     {
-        
+        trackSpawner.MoveTrack();
     }
 }

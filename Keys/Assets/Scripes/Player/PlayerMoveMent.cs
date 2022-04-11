@@ -36,6 +36,7 @@ public class PlayerMoveMent : MonoBehaviour
 
     public GameObject Cam;
     public GameObject Train;
+    public SpawnManger spawnManger;
 
 
     float x, y;
@@ -275,9 +276,6 @@ public class PlayerMoveMent : MonoBehaviour
         if (trigger.CompareTag("Free"))
         {
             transform.parent = null;
-
-
-
         }
 
     }
@@ -286,12 +284,15 @@ public class PlayerMoveMent : MonoBehaviour
     {
         if (trigger.CompareTag("Free"))
         {
-
             transform.parent = Train.gameObject.transform;
-
 
         }
 
+    }
+
+    private void OnTriggerEnter(Collider trigger)
+    {
+        spawnManger.SpawnTriggerEntered();
     }
 
 

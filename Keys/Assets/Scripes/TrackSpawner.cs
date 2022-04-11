@@ -1,26 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TrackSpawner : MonoBehaviour
 {
-    public List<GameObject> Tracks;
-    float offset = 200f;
+    public List<GameObject> tracks;
+    float offset = 190f;
 
     void Start()
     {
-        if(Tracks != null && Tracks.Count > 0)
+        if(tracks != null && tracks.Count > 0)
         {
-            Tracks = Tracks.OrderBy(ref => ref.transform.position.z).ToList();
+            tracks = tracks.OrderBy(r => r.transform.position.z).ToList();
         }
-
     }
 
     
-    void Update()
+    public void MoveTrack()
     {
-        GameObject movedTrack = Tracks[0];
-        Tracks.Remove(movedTrack);
-        float newZ = Tracks[Tracks.Count - 1].transform.position.z + offset
+        GameObject movedTrack = tracks[0];
+        tracks.Remove(movedTrack);
+        float newZ = tracks[tracks.Count - 1].transform.position.z + offset;
+        movedTrack.transform.position = new Vector3(0, 0, newZ);
+        tracks.Add(movedTrack);
     }
 }
