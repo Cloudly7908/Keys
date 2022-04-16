@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlotSpawner : MonoBehaviour
 {
-    private int initAmount = 1;
-    private float plotsize = 1000;
-    private float xPosleft = 110.4f;
-    private float xPosRight = -110.4f;
-    private float lastZPos = 0f;
+    private int initAmount = 4;
+    private float plotsize = 185;
+    private float xPosleft = 115;
+    private float xPosRight = -115;
+    private float lastZPos = 50f;
 
     public List<GameObject> plots;
 
@@ -36,6 +36,6 @@ public class PlotSpawner : MonoBehaviour
         Instantiate(plotLeft, new Vector3(xPosleft, 0.025f, zPos), plotLeft.transform.rotation);
         Instantiate(plotRight, new Vector3(xPosRight, 0.025f, zPos), new Quaternion(0, 180, 0, 0));
 
-        //lastZPos += plotsize;
+        lastZPos += plotsize;
     }
 }
