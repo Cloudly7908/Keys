@@ -34,7 +34,7 @@ public class PlotSpawner : MonoBehaviour
         float zPos = lastZPos + plotsize;
 
         Instantiate(plotLeft, new Vector3(xPosleft, 0.025f, zPos), plotLeft.transform.rotation);
-        Instantiate(plotRight, new Vector3(xPosRight, 0.025f, zPos), new Quaternion(0, 180, 0, 0));
+        Instantiate(plotRight, new Vector3(xPosRight, 0.025f, zPos), plotLeft.transform.rotation);
 
         lastZPos += plotsize;
     }
